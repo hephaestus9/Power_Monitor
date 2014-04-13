@@ -1,4 +1,5 @@
 /*
+Modified by J.Brian Apr 2014
 BBCC_Plotter
  by Tim Hirzel, Feb 2008
  v 1.1
