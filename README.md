@@ -3,7 +3,8 @@ Power_Monitor
 
 Arduino and Processing sketches for Power Monitor Shield
 
-View the Design_Report.pdf document for the write up of the project done by Christopher McNally.
+This project is based on the work done by Christopher McNally.
+Please view the Design_Report.pdf document for the write up of the project, and [website] (http://people.ece.cornell.edu/land/courses/eceprojectsland/STUDENTPROJ/2009to2010/csm44/index.html).
 
 >The sample code was written for use with the 3000 Turn [CR Magnetics](http://www.crmagnetics.com/Products/CR3100-Series-P75.aspx) split core transformer. 
 
