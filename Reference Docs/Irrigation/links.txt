@@ -1,0 +1,41 @@
+http://www.ianrpubs.unl.edu/pages/publicationD.jsp?publicationId=742
+http://tlirr.com/products/pivot_management_options/
+
+TDR
+http://electronicdesign.com/displays/build-your-own-cable-radar
+
+
+
+A time domain reflectometer (TDR) is a handy but rather expensive instrument, and isn’t commonly found on every bench. I used to rent them, but after having paid large bills for several years, I decided to make my own. I saved a bundle and was able to customize it for my needs.
+
+A TDR performs a number of tasks, such as:
+
+    sending a well-defined voltage pulse down the line and waiting for the echo.
+    displaying the pulse and echo on a fast oscilloscope screen.
+    measuring echo time to find cable length or distance to fault.
+
+If you look at the list, you will find that a modern oscilloscope will do most of the job. The only thing needed for the TDR function is pulse generation. It turned out to be much easier to build than I had expected. A simple hex inverter in Advanced CMOS technology (74AC14) does the job admirably.
+
+There are five basic design parameters that must be addressed: rise time, pulse width, amplitude, impedance, and PRF.
+
+To be useful, the pulse should have a rise time that corresponds to the desired distance resolution. If you need 1-m resolution, then better than 10 ns is required. This design has a resolution better than 5 ns.
+
+The pulse width can be quite short for short cables, but needs to be longer for greater length cables so that enough energy is introduced in the cable. If the energy is too low, there won’t be enough energy in the return wave to be detected reliably. This design allows a choice between 15 and 2500 ns. The 2500-ns pulse width will produce enough energy for a 5- to 10-km cable.
+
+The other parameter that determines energy is amplitude. Too little amplitude won’t work in noisy installations. On the other hand, too much amplitude can be a problem if you’re working in installations with other cables that can pick up EMI and cause undesired responses in the system. Amplitudes between 1 and 10 V seem to serve most applications. This design uses 4 to 5 V as dictated by battery voltage.
+
+Ordinary cables have impedances in the 50-300? range. Using a 250-? potentiometer (the low-inductance type) and a fixed generator impedance (50 ?), any impedance in that range can be achieved.
+
+A 14-pin DIP, a handful of small components, a switch, and a potentiometer is all that’s needed. The 74AC family has quite hefty specifications. Among the features are 24-mA symmetrical sink/source current, and output impedance in the tens of ohms range. A 200-or 220-? resistor in series with each output will produce approximately a 250-? impedance. Paralleling five such circuits will give you close to 50-? impedance. And that’s about as low as you are likely to need. Most cables are in the 50- to 300-? range. Use the spare inverter for a simple, low duty-cycle RC relaxation oscillator and you have your pulse generator. The schematic shows the details (Fig. 1).
+
+The power supply isn’t critical; I used three alkaline AA cells. Battery operation is very favorable—the batteries seem to last forever. If you use a battery-operated scope, like the THS 720 or 730, you will get better results than possible with an ac-powered instrument. The reason for this effect seems to be that some noise is introduced via the power-supply transformer capacitances. Construction is very straightforward. I used a ground plane and hook-up wire for my prototype. Later, I had a pc board made, and it works just as well. One factor must be kept in mind, though—good powersupply decoupling. I use a small (1 nF) ceramic disk and a 1-µF foil capacitor.
+
+Figure 2 shows a 100-m cable with 500-? shunt resistance some 20 m from the start. The pulse that’s being sent down the cable starts at 40 ns.
+
+In this case, the wave impedance of the cable is approximately 150 ?. The propagation speed is a little less than 200 m/µs. Because the wave has to travel both ways, the large echo at 5.5 divisions (1.1 µs) from the pulse’s front edge tells us where the cable ends. The fact that it goes positive tells us that the cable is open at the end.
+
+The little echo observed 280 ns from the start is from a 500-? shunt resistor that should not have been there. The echo goes negative since this extra load lowers the impedance at this point.
+
+Checking a LAN cable using this TDR is easy. By connecting to one end of the cable and looking at the echoes (there should be no echoes in a wellterminated cable), you can easily see if anything is wrong with the loading, terminators, or joints.
+
+It’s just as easy to locate a fault in a buried cable using this TDR. Connect the TDR to one end of the cable and see if there’s any extra echo (going down if there’s an extra load or a short, going up if there’s a bad connection or an open cable). If one exists, you can be certain where the fault is located. The distance can be calculated from the delay (most cables have bidirectional wave speeds between 100 and 110 m/µs, so the calculation is very easy). By doing this, you will not need to dig an unecessarily long trench to repair the cable. You only dig where the fault is. The “cable radar” also is a great tool when checking antenna cables.
