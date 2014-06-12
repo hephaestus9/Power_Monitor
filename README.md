@@ -3,6 +3,8 @@ Power_Monitor
 
 Arduino and Processing sketches for Power Monitor Shield
 
+*Boards v1r3 and v2r1 are not fully tested
+
 This project is based on the work done by Christopher McNally.
 Please view the Design_Report.pdf document for the write up of the project, and [website] (http://people.ece.cornell.edu/land/courses/eceprojectsland/STUDENTPROJ/2009to2010/csm44/index.html).
 
