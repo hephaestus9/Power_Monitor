@@ -13,4 +13,4 @@ Please view the Design_Report.pdf document for the write up of the project, and 
 >If using the current transformer from [seeedstudio](http://www.seeedstudio.com/depot/Noninvasive-AC-Current-Sensor-100A-max-p-547.html?cPath=25_28) then the code needs to be changed, as this is a 2000 turn transformer.
 
 
-Project Page: [website] (http://hackaday.io/project/1150-power-monitor)
+Project Page: [Power Monitor] (http://hackaday.io/project/1150-power-monitor)
